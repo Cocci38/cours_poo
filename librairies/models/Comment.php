@@ -4,6 +4,9 @@ require_once ('librairies\models\Model.php');
 
 class Comment extends Model{
 
+    // Trouver un commentaire et Supprimer un commentaire
+    protected $table = "comments";
+
     //Pour récupérer tous les commentaires
 
 public function findAllWithArticle(int $article_id) : array
@@ -13,24 +16,6 @@ public function findAllWithArticle(int $article_id) : array
     $commentaires = $query->fetchAll();
 
     return $commentaires;
-}
-// Trouver un commentaire
-
-public function find(int $id)
-{
-    $query = $this->pdo->prepare('SELECT * FROM comments WHERE id = :id');
-    $query->execute(['id' => $id]);
-    $comment = $query->fetch();
-
-    return $comment;
-}
-
-// Supprimer un commentaire
-
-public function delete(int $id) : void 
-{
-    $query = $this->pdo->prepare('DELETE FROM comments WHERE id = :id');
-    $query->execute(['id' => $id]);
 }
 
 // Insérer un commentaire

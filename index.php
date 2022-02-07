@@ -16,7 +16,7 @@ $model = new Article();
  */
 // On utilisera ici la méthode query (pas besoin de préparation car aucune variable n'entre en jeu)
 // On fouille le résultat pour en extraire les données réelles
-$articles = $model->findAll();
+$articles = $model->findAll("created_at DESC");
 
 /**
  * 3. Affichage
