@@ -2,7 +2,6 @@
 
 namespace Models;
 
-require_once('librairies\database.php');
 
 abstract class Model {
 
@@ -13,7 +12,7 @@ abstract class Model {
 
     public function __construct()
     {
-        $this->pdo = getPdo();
+        $this->pdo = \Database::getPdo();
     }
 
     // Affiche un item d'une table
