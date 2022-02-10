@@ -1,8 +1,9 @@
 <?php
 
-/* 
+/**
 *Retourne une connexion à la base de données 
-*@return PDO */
+*@return PDO 
+*/
 
 function getPdo(): PDO{
     $pdo = new PDO('mysql:host=localhost;dbname=blogpoo;charset=utf8', 'root', '', [

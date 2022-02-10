@@ -1,5 +1,7 @@
 <?php
 
+namespace Models;
+
 require_once('librairies\database.php');
 
 abstract class Model {
@@ -33,8 +35,10 @@ function delete(int $id) :void
     $query->execute(['id' => $id]);
 }
 
-/*Retourne la liste des articles classés par date de création
-@return array*/
+/**
+ * Retourne la liste des articles classés par date de création
+ * @return array
+ */
 
 public function findAll(?string $order = "") : array
 {
